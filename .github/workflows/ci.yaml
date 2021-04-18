@@ -26,6 +26,7 @@ jobs:
             do
               docker build --tag academiaonline/simplilearn-dockercoins:latest-${service}-testing ${service}
             done
+
           for service in hasher redis rng
             do
               docker network create ${service}
@@ -46,6 +47,7 @@ jobs:
             done
           
           docker run --detach --name webui --network redis academiaonline/simplilearn-dockercoins:latest-webui-testing
+
           while true
             do
               sleep 10
