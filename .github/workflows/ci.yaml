@@ -32,7 +32,7 @@ jobs:
             done
           
           # --volumes XXX:/data will connect /data inside the container with the following folder outside the container: /var/lib/docker/volumes/XXX
-          docker run --detach --name redis --network redis --volumes redis:/data redis
+          docker run --detach --name redis --network redis --volume redis:/data redis
           
           for service in hasher rng
             do
@@ -46,3 +46,8 @@ jobs:
             done
           
           docker run --detach --name webui --network redis academiaonline/simplilearn-dockercoins:latest-webui-testing
+          while true
+            do
+              sleep 10
+              docker logs worker 2>& 1 | grep "Coin found" && break
+            done
