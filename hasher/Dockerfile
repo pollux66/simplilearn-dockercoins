@@ -1,4 +1,4 @@
-FROM ruby:alpine
+FROM ruby:3.2.2-alpine3.18
 
 # The following is typically supplied by the DEV Team
 # Install curl for testing purposes (NOT in production)
