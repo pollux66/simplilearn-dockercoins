@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:23.11.1-alpine3.21
 
 # The following information is typically supplied by the DEV team
 # Install CURL for testing purposes (NOT IN PRODUCTION)
