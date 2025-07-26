@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.14.0rc1-alpine3.22
 
 # The following information is typically supplied by the DEV team
 # Install CURL for testing purposes (NOT IN PRODUCTION)
